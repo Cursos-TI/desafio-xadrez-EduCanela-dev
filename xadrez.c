@@ -19,32 +19,63 @@
 
 int main(){
 
+    int cavalo = 1; 
     int torre = 1;
     int bispo = 1;
     int rainha = 1;
+    int anda = 0;
 
-    for (torre; torre <= 5; torre++)
-    {
-        printf("Torre moveu-se: 'direita'\n");
+    while (cavalo <= 1) {// 1loop do valor 1; +1loop do valor 3; +1loop do valor 5 
+        printf("Cavalo moveu-se:\n");
+        for (anda; anda <= cavalo; anda++)
+        {
+            printf("    Baixo\n");
+        }
+        printf("    Esquerda\n");
+        printf("\n");
+        ++cavalo;
+        ++cavalo;
     }
     
-    printf("\n\n");
+            printf("______________________________\n\n");
+    
+    int numT = 1;
+    do {
+        numT <= 1 ? printf("torre andou para a direita %d vez.\n", numT) 
+            : printf("torre andou para a direita %d vezes.\n", numT);
+        while (numT <= torre)
+        {
+            ++numT;
+        }
+        torre++;
+    } while (torre <= 5);
+    
+            printf("______________________________\n\n");
+    
+    for (int num = 1; num <= bispo; ++num) {
+        for (bispo; bispo <= 5; bispo++)
+        { }
 
-    while (bispo <= 5)
-    {
-        printf("Bispo moveu-se: 'cima, direita'\n");
-        bispo++;
+        num <= 1 ? printf("bispo andou para diagonal direita %d vez.\n", num)
+            : printf("bispo andou para diagonal direita %d vezes.\n", num);
+        
     }
     
-    printf("\n\n");
+            printf("______________________________\n\n");
 
-    do
-    {
-        printf("Rainha moveu-se: 'esquerda'\n");
-        rainha++;
-    } while (rainha <= 8);
-    
-return 0; }
+    while (rainha <= 8) {
+        for ( int num = 1; num <= 8; num++)
+        {
+            num <= 1 ? printf("Rainha andou para a esquerda %d vez.\n", num) 
+                : printf("Rainha andou para a esquerda %d vezes.\n", num);
+            
+            ++rainha;
+        }
+    }
+
+
+
+return 0;}
 
     // Nível Aventureiro - Movimentação do Cavalo
     // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
