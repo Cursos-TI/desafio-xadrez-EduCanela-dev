@@ -23,18 +23,18 @@ int main(){
     int torre = 1;
     int bispo = 1;
     int rainha = 1;
-    int anda = 0;
 
-    while (cavalo <= 1) {// 1loop do valor 1; +1loop do valor 3; +1loop do valor 5 
+    while (cavalo <= 1) {
         printf("Cavalo moveu-se:\n");
-        for (anda; anda <= cavalo; anda++)
-        {
+        for (int anda = 0; anda <= cavalo; anda++)
+        {//como cavalo sempre será 2 valores acima de "anda", o "for" será executado 2 vezes
             printf("    Baixo\n");
         }
         printf("    Esquerda\n");
         printf("\n");
         ++cavalo;
         ++cavalo;
+        //Como o cavalo anda para baixo duas vezes, somei o valor da peça cavalo duas vezes 
     }
     
             printf("______________________________\n\n");
@@ -42,34 +42,44 @@ int main(){
     int numT = 1;
     do {
         numT <= 1 ? printf("torre andou para a direita %d vez.\n", numT) 
-            : printf("torre andou para a direita %d vezes.\n", numT);
+            : printf("torre andou para a direita %d vezes.\n", numT);//fim operador ternário
+                /*como o operador ternário está na estrutura externa, ele vai ser repetido a cada novo loop
+                atualizando o valor de "num" a cada soma(++)*/
         while (numT <= torre)
         {
-            ++numT;
+            ++numT;//enquanto o o valor de numT não se igualar ao da torre, sera somado um número
         }
-        torre++;
-    } while (torre <= 5);
+        torre++;//soma um número a variável para evitar um loop infinito
+    } while (torre <= 5);//finaliza quando "torre" fica equivalente a 5
     
             printf("______________________________\n\n");
+
     
     for (int num = 1; num <= bispo; ++num) {
+        /*
+        "num é igual a "1";
+        e será executaddo até se igualar ao valor de bispo;
+        e a cada novo loop, soma +1 na variavel 
+        */
         for (bispo; bispo <= 5; bispo++)
-        { }
+        { }//soma um valor a bispo a cada vez que o loop interno é executado
 
         num <= 1 ? printf("bispo andou para diagonal direita %d vez.\n", num)
-            : printf("bispo andou para diagonal direita %d vezes.\n", num);
+            : printf("bispo andou para diagonal direita %d vezes.\n", num);//fim operador ternário
         
     }
     
             printf("______________________________\n\n");
 
-    while (rainha <= 8) {
+    while (rainha <= 8) {//executado enquanto rainha for menor ou igual a 8
         for ( int num = 1; num <= 8; num++)
+        /*
+        a variável num é executado a cada novo loop interno e somado +1 a cada execução
+        */
         {
             num <= 1 ? printf("Rainha andou para a esquerda %d vez.\n", num) 
-                : printf("Rainha andou para a esquerda %d vezes.\n", num);
-            
-            ++rainha;
+                : printf("Rainha andou para a esquerda %d vezes.\n", num);//fim operador ternário
+            ++rainha;//soma +1 para evitar loop infinito, pois assim a variável "rainha" alcança a condição (rainha <= 8)
         }
     }
 
